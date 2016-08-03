@@ -5,8 +5,8 @@ namespace Mathmagician
 {
     class Program
     {
-        public static string UserCommand { get; set; }
-        public static int UserCount { get; set; }
+        private static string UserCommand { get; set; }
+        private static int UserCount { get; set; }
         static void Main(string[] args)
         {
             Console.WriteLine(Dialog.InitialGreeting());
@@ -17,8 +17,6 @@ namespace Mathmagician
             Console.Write(Dialog.Prompt());
             Console.ReadLine();
             Console.WriteLine(Dialog.Whoops());
-            Console.WriteLine(UserCommand);
-            Console.WriteLine(UserCount);
             Console.ReadKey();
         }
     }
