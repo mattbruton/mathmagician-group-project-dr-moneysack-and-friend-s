@@ -4,12 +4,11 @@ using System.Text;
 
 namespace Mathmagician.Commands
 {
-    public class Command
+    public abstract class Command : ICommand
     {
         public List<int> Numbers = new List<int>();
 
-        //need to implement logic for this method.
-        public virtual void GenerateNumbers(int quantityOfNumsToGenerate) {}
+        public virtual void CreateNumbers(int quantityOfNumsToCreate) {}
 
         public string NumbersToString()
         {
@@ -28,7 +27,7 @@ namespace Mathmagician.Commands
             // If user gives a lower than 1 number, return string prompting them to use a higher value.
             else
             {
-                return "Give me a quantity that I can work with! At least let me show you a single number.";
+                return string.Format("Give me a quantity that I can work with! At least let me show you a single number.");
             }
         }
     }
