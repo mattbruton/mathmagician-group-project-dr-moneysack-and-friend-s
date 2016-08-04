@@ -18,6 +18,17 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
+        public void AssertNumbersToStringReturnsCorrectMessageWithEmptyList()
+        {
+            Command testCommand = new Command();
+            int[] testNumbers = {};
+            testCommand.Numbers.AddRange(testNumbers);
+
+            Assert.AreEqual("Give me a quantity that I can work with! At least let me show you a single number.", testCommand.NumbersToString());
+
+        }
+
+        [TestMethod]
         public void AssertNumbersToStringIsPrintingAllNumbersInList()
         {
             Command testCommand = new Command();
