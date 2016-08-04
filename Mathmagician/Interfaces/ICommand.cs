@@ -1,8 +1,7 @@
-﻿namespace Mathmagician.Interfaces
+﻿namespace Mathmagician
 {
     interface ICommand
     {
-        void CommandLogic();
         void GenerateNumbers();
     }
 }
