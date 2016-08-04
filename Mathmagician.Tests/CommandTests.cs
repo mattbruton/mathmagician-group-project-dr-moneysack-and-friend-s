@@ -39,7 +39,7 @@ namespace Mathmagician.Tests
             int[] testNumbers = { 1, 2, 3, 4, 5 };
             test.Numbers.AddRange(testNumbers);
 
-            Assert.AreEqual("1, 2, 3, 4, 5", test.NumbersToString());
+            Assert.AreEqual("Here are your numbers: \n1, 2, 3, 4, 5", test.NumbersToString());
         }
 
         [TestMethod]

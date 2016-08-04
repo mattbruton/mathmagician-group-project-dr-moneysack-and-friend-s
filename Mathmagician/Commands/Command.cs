@@ -15,14 +15,12 @@ namespace Mathmagician.Commands
             // Assuming user gives a value greater than 0
             if (Numbers.Count >= 1)
             {
-                StringBuilder numberString = new StringBuilder();
-                //iterate through list "Numbers", adding all numbers to numberString
-                foreach (int number in Numbers)
+                string numberString = string.Format("Here are your numbers: \n");
+                foreach(int number in Numbers)
                 {
-                    numberString.Append(number).Append(", ");
+                    numberString += string.Format("{0}, ", number);
                 }
-                // convert to string and remove extra ", ".
-                return numberString.ToString().Remove(numberString.Length - 2);
+                return string.Format(numberString.Remove(numberString.Length - 2));
             }
             // If user gives a lower than 1 number, return string prompting them to use a higher value.
             else
