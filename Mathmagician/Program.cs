@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,13 +12,6 @@ namespace Mathmagician
         
         static void Main(string[] args)
         {
-            Integer newInt = new Integer();
-            newInt.GenerateNumbers(9);
-
-            Console.WriteLine(newInt.NumbersToString());
-
-            Console.ReadKey();
-            
         }
     }
 }

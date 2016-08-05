@@ -2,6 +2,6 @@
 {
     interface ICommand
     {
-        void GenerateNumbers();
+        string NumbersToString();
     }
 }

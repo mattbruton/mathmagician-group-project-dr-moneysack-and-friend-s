@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Commands\Integer.cs" />
     <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\Odd.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

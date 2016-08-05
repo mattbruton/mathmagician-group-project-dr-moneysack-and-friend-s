@@ -16,5 +16,5 @@ namespace Mathmagician.Commands
                 Numbers.Add(i);
             }
         }
-   }
+    }
 }
