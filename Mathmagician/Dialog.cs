@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mathmagician
+﻿namespace Mathmagician
 {
-    public static class Dialog
+    public class Dialog
     {
         public static string Prompt()
         {
-            return ">";
+            return "> ";
         }
         public static string InitialGreeting()
         {
@@ -30,6 +24,16 @@ namespace Mathmagician
         public static string Whoops()
         {
             return "Whoops!";
+        }
+
+        public static string Bye()
+        {
+            return "Goodbye!";
+        }
+
+        public static string InvalidCommand()
+        {
+            return "Whoops! I didn't understand that command.\n";
         }
     }
 }
