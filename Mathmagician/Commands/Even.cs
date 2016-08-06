@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mathmagician.Commands
 {
-    class Even : Command
+    public class Even : Command
     {
         public override void CreateNumbers(int quantityOfNumsToCreate)
         {
