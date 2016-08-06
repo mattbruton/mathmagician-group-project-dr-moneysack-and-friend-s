@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mathmagician.Commands;
 
 namespace Mathmagician.Tests
@@ -10,15 +9,13 @@ namespace Mathmagician.Tests
         [TestMethod]
         public void IntegerEnsureICanCreateAnIntstance()
         {
-            //Arrange
+            Integer my_int = new Integer();
 
-            //Act
-            Integer my_int = new Integer();//what i want to be able to do
-            //Assert
             Assert.IsNotNull(my_int);
         }
+
         [TestMethod]
-        public void EnsureMethodIsReturningAString()
+        public void IntegerReturningAStringOfInts()
         {
             Integer testCommand = new Integer();
             int[] testNumbers = { 1, 2, 3, 4, 5 };
@@ -28,19 +25,15 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
-        public void EnsureMethodIsPrintingNumbersToList()
+        public void IntegerOutputQuantityMatchesUserInput()
         {
-            Integer test = new Integer();
-            int[] testNumbers = { 1, 2, 3, 4, 5 };
-            test.Numbers.AddRange(testNumbers);
+            Integer outputInts = new Integer();
+            outputInts.CreateNumbers(6);
 
-            Assert.AreEqual("Here are your Integers: \n1, 2, 3, 4, 5", test.NumbersToString());
+            Assert.AreEqual(6, outputInts.Numbers.Count);
         }
 
-        [TestMethod]
-        public void EnsureQuantityOfNumsToGenerateIsCorrect()
-        {
-            
-        }
+
+      
     }
 }
