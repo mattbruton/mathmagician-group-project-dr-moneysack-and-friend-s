@@ -11,7 +11,7 @@ namespace Mathmagician
             CommandMenu();
         }
 
-        static List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci", "whoops", "exit" };
+        static List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci", "whoops" };
 
         private static void CommandMenu()
         {
