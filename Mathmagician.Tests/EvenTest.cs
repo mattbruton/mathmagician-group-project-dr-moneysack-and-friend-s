@@ -1,6 +1,6 @@
 ﻿using Mathmagician.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace Mathmagician.Tests
 {
@@ -25,7 +25,17 @@ namespace Mathmagician.Tests
         [TestMethod]
         public void EvenEnsureNumsInListAreAllEven()
         {
-           
+            Even test = new Even();
+            test.CreateNumbers(1000);
+            Assert.IsTrue(test.Numbers.Any(n => n % 2 == 0));
+        }
+
+        [TestMethod]
+        public void EvenEnsureNumsAreNotOdd()
+        {
+            Even test = new Even();
+            test.CreateNumbers(1000);
+            Assert.IsFalse(test.Numbers.Any(n => n % 2 != 0));
         }
     }
 }
