@@ -1,9 +1,5 @@
 ﻿using System;
 using Mathmagician.Commands;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Mathmagician
 {
@@ -11,34 +7,33 @@ namespace Mathmagician
     {
         public static bool CanMoveOnFromMainMenu()
         {
-            bool toNext = false;
+            Console.WriteLine(Dialog.MainMenu());
+            Console.Write(Dialog.Prompt());
             string userChoice = Console.ReadLine();
             switch (userChoice.ToLower())
             {
                 case "create numbers":
                     {
-                        toNext = true;
-                        break;
+                        return true;
                     }
                 case "exit":
                     {
                         Environment.Exit(0);
-                        break;
+                        return false;
                     }
                 default:
                     {
                         Console.WriteLine(Dialog.InvalidCommand());
-                        Console.WriteLine(Dialog.MainMenu());
-                        Console.Write(Dialog.Prompt());
-                        break;
+                        return false;
                     }
             }
-            return toNext;
         }
 
         public static string UserHasSelectedACommandFromList()
         {
             string toNext = "";
+            Console.WriteLine(Dialog.ListOfCommands());
+            Console.Write(Dialog.Prompt());
             string userChoice = Console.ReadLine();
             switch (userChoice.ToLower())
             {
@@ -72,18 +67,22 @@ namespace Mathmagician
                         toNext = "even";
                         break;
                     }
+                case "exit":
+                    {
+                        Environment.Exit(0);
+                        break;
+                    }
                 default:
                     {
                         Console.WriteLine(Dialog.InvalidCommand());
-                        Console.WriteLine(Dialog.ListOfCommands());
-                        Console.Write(Dialog.Prompt());
+                        toNext = "whoops";
                         break;
                     }
             }
             return toNext;
         }
 
-        public static int GetQuantityOfNumbers()
+        private static int GetQuantityOfNumbers()
         {
             Console.WriteLine(Dialog.AskForQuantity());
             Console.Write(Dialog.Prompt());
@@ -92,40 +91,20 @@ namespace Mathmagician
             return userNum;
         }
 
-        public static void OddLogic()
+        private static void OddLogic()
         {
             Odd newOdd = new Odd();
             newOdd.CreateNumbers(GetQuantityOfNumbers());
             Console.WriteLine(newOdd.NumbersToString());
         }
 
-        public static void EvenLogic()
-        {
-            Odd newOdd = new Odd();
-            newOdd.CreateNumbers(GetQuantityOfNumbers());
-            Console.WriteLine(newOdd.NumbersToString());
-        }
+        private static void EvenLogic() { }
 
-        public static void IntegersLogic()
-        {
-            Odd newOdd = new Odd();
-            newOdd.CreateNumbers(GetQuantityOfNumbers());
-            Console.WriteLine(newOdd.NumbersToString());
-        }
+        private static void IntegersLogic() { }
 
-        public static void PrimesLogic()
-        {
-            Odd newOdd = new Odd();
-            newOdd.CreateNumbers(GetQuantityOfNumbers());
-            Console.WriteLine(newOdd.NumbersToString());
-        }
+        private static void PrimesLogic() { }
 
-        public static void FibonacciLogic()
-        {
-            Odd newOdd = new Odd();
-            newOdd.CreateNumbers(GetQuantityOfNumbers());
-            Console.WriteLine(newOdd.NumbersToString());
-        }
+        private static void FibonacciLogic() { }
     }
 }
 

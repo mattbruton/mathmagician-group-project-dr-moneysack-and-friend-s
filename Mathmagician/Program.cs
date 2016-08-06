@@ -8,26 +8,26 @@ namespace Mathmagician
         static void Main(string[] args)
         {
             Console.WriteLine(Dialog.InitialGreeting());
+            MainMenu();
+            CommandMenu();
+        }
 
-            do
+        static List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci", "whoops", "exit" };
+
+        private static void MainMenu()
+        {
+            while (!BranchingLogic.CanMoveOnFromMainMenu())
             {
-                Console.WriteLine(Dialog.MainMenu());
-                Console.Write(Dialog.Prompt());
                 BranchingLogic.CanMoveOnFromMainMenu();
             }
-            while (!BranchingLogic.CanMoveOnFromMainMenu());
+        }
 
-            List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci" };
-
-            do
+        private static void CommandMenu()
+        {
+            while (commandChoices.Contains(BranchingLogic.UserHasSelectedACommandFromList()))
             {
-                Console.WriteLine(Dialog.ListOfCommands());
-                Console.Write(Dialog.Prompt());
                 BranchingLogic.UserHasSelectedACommandFromList();
             }
-            while (!commandChoices.Contains(BranchingLogic.UserHasSelectedACommandFromList()));
-
-            Environment.Exit(0);
         }
     }
 }

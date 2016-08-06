@@ -13,22 +13,17 @@
 
         public static string MainMenu()
         {
-            return "What would you like for me to do?\n\nCreate numbers\nExit\n";
+            return "\nWhat would you like for me to do?\n\nCreate numbers\n\nExit\n";
         }
 
         public static string ListOfCommands()
         {
-            return "What type of number or numbers would you like?\n\nIntegers\nPrimes\nFibonacci\nEven\nOdd\n";
+            return "\nWhat type of number or numbers would you like?\n\nIntegers\nPrimes\nFibonacci\nEven\nOdd\n\nExit\n";
         }
 
         public static string Whoops()
         {
             return "Whoops!";
-        }
-
-        public static string Bye()
-        {
-            return "Goodbye!";
         }
 
         public static string InvalidCommand()
@@ -37,7 +32,7 @@
         }
         public static string AskForQuantity()
         {
-            return "How many numbers would you like me to create?";
+            return "\nHow many numbers would you like me to create?";
         }
     }
 }
