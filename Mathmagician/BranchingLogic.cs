@@ -5,37 +5,24 @@ namespace Mathmagician
 {
     class BranchingLogic
     {
-        public static bool CanMoveOnFromMainMenu()
+        
+        private static string ReturnUserSelectionAsString()
         {
-            Console.WriteLine(Dialog.MainMenu());
-            Console.Write(Dialog.Prompt());
             string userChoice = Console.ReadLine();
-            switch (userChoice.ToLower())
-            {
-                case "create numbers":
-                    {
-                        return true;
-                    }
-                case "exit":
-                    {
-                        Environment.Exit(0);
-                        return false;
-                    }
-                default:
-                    {
-                        Console.WriteLine(Dialog.InvalidCommand());
-                        return false;
-                    }
-            }
+            return userChoice;
         }
 
-        public static string UserHasSelectedACommandFromList()
+        private static void DisplayCommandMenu()
         {
-            string toNext = "";
             Console.WriteLine(Dialog.ListOfCommands());
             Console.Write(Dialog.Prompt());
-            string userChoice = Console.ReadLine();
-            switch (userChoice.ToLower())
+        }
+
+        public static string UsersSelectionFromCommandList()
+        {
+            string toNext = "";
+            DisplayCommandMenu();
+            switch (ReturnUserSelectionAsString().ToLower())
             {
                 case "integers":
                     {
@@ -82,14 +69,25 @@ namespace Mathmagician
             return toNext;
         }
 
-        private static int GetQuantityOfNumbers()
+        private static string PromptForQuantity()
         {
             Console.WriteLine(Dialog.AskForQuantity());
             Console.Write(Dialog.Prompt());
             string userNumAsString = Console.ReadLine();
-            int userNum = int.Parse(userNumAsString);
-            return userNum;
+            return userNumAsString;
         }
+
+        private static int GetQuantityOfNumbers()
+        { 
+            int userNumAfterParse;
+            bool canInputBeParsed = int.TryParse(PromptForQuantity(), out userNumAfterParse);
+            if (!canInputBeParsed)
+            {
+                return 0;
+            }
+            return userNumAfterParse;
+        }
+
 
         private static void OddLogic()
         {

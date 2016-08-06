@@ -8,12 +8,7 @@
         }
         public static string InitialGreeting()
         {
-            return "\n\nI am the Mathmagician! I can make all sorts of numbers!\nJust tell me how many numbers you want and what types of numbers to generate.\n";
-        }
-
-        public static string MainMenu()
-        {
-            return "\nWhat would you like for me to do?\n\nCreate numbers\n\nExit\n";
+            return "\n\nI am the Mathmagician! I can make all sorts of numbers!\nJust tell me how many numbers you want and what types of numbers to generate.";
         }
 
         public static string ListOfCommands()
