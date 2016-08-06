@@ -1,6 +1,7 @@
 ﻿using Mathmagician.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Mathmagician.Tests
 {
@@ -39,17 +40,9 @@ namespace Mathmagician.Tests
         public void OddCreateDoesNotCreateEvenNumbers()
         {
             Odd test = new Odd();
-            bool hasEvenNumbers = false;
-            test.CreateNumbers(1000000);
-            foreach(int number in test.Numbers)
-            {
-                if(number % 2 == 0)
-                {
-                    hasEvenNumbers = true;
-                }
-            }
-
-            Assert.IsFalse(hasEvenNumbers);
+            test.CreateNumbers(1000);
+            
+            Assert.IsFalse(test.Numbers.Any(n => n % 2 == 0));
         }
     }
 }
