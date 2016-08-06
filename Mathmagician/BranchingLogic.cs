@@ -1,4 +1,5 @@
 ﻿using System;
+using Mathmagician.Commands;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,40 +36,40 @@ namespace Mathmagician
             return toNext;
         }
 
-        public static bool UserHasSelectedACommandFromList()
+        public static string UserHasSelectedACommandFromList()
         {
-            bool toNext = false;
+            string toNext = "";
             string userChoice = Console.ReadLine();
             switch (userChoice.ToLower())
             {
                 case "integers":
                     {
                         Console.WriteLine("Need to implement integers");
-                        toNext = true;
+                        toNext = "integers";
                         break;
                     }
                 case "fibonacci":
                     {
                         Console.WriteLine("Need to implement fibonacci");
-                        toNext = true;
+                        toNext = "fibonacci";
                         break;
                     }
                 case "primes":
                     {
                         Console.WriteLine("Need to implement primes");
-                        toNext = true;
+                        toNext = "primes";
                         break;
                     }
                 case "odd":
                     {
-                        Console.WriteLine("Need to implement odd numbers");
-                        toNext = true;
+                        OddLogic();
+                        toNext = "odd";
                         break;
                     }
                 case "even":
                     {
                         Console.WriteLine("Need to implement even numbers");
-                        toNext = true;
+                        toNext = "even";
                         break;
                     }
                 default:
@@ -82,6 +83,49 @@ namespace Mathmagician
             return toNext;
         }
 
+        public static int GetQuantityOfNumbers()
+        {
+            Console.WriteLine(Dialog.AskForQuantity());
+            Console.Write(Dialog.Prompt());
+            string userNumAsString = Console.ReadLine();
+            int userNum = int.Parse(userNumAsString);
+            return userNum;
+        }
+
+        public static void OddLogic()
+        {
+            Odd newOdd = new Odd();
+            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newOdd.NumbersToString());
+        }
+
+        public static void EvenLogic()
+        {
+            Odd newOdd = new Odd();
+            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newOdd.NumbersToString());
+        }
+
+        public static void IntegersLogic()
+        {
+            Odd newOdd = new Odd();
+            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newOdd.NumbersToString());
+        }
+
+        public static void PrimesLogic()
+        {
+            Odd newOdd = new Odd();
+            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newOdd.NumbersToString());
+        }
+
+        public static void FibonacciLogic()
+        {
+            Odd newOdd = new Odd();
+            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newOdd.NumbersToString());
+        }
     }
 }
 

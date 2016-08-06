@@ -17,14 +17,15 @@ namespace Mathmagician
             }
             while (!BranchingLogic.CanMoveOnFromMainMenu());
 
+            List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci" };
+
             do
             {
                 Console.WriteLine(Dialog.ListOfCommands());
                 Console.Write(Dialog.Prompt());
                 BranchingLogic.UserHasSelectedACommandFromList();
             }
-            while (!BranchingLogic.UserHasSelectedACommandFromList());
-
+            while (!commandChoices.Contains(BranchingLogic.UserHasSelectedACommandFromList()));
 
             Environment.Exit(0);
         }
