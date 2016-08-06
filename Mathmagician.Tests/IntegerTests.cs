@@ -40,6 +40,8 @@ namespace Mathmagician.Tests
             Integer testInts = new Integer();
             testInts.CreateNumbers(5);
             List<int> intList = new List<int>() { 0, 1, 2, 3, 4 };
+
+            CollectionAssert.AreEqual(testInts.Numbers, intList);
         }
 
       
