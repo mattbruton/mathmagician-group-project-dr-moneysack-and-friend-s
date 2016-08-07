@@ -5,7 +5,6 @@ namespace Mathmagician
 {
     class BranchingLogic
     {
-        
         private static string ReturnUserSelectionAsString()
         {
             string userChoice = Console.ReadLine();
@@ -88,7 +87,6 @@ namespace Mathmagician
             }
             return userNumAfterParse;
         }
-
 
         private static void OddLogic()
         {
