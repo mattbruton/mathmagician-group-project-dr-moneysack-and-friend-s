@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Mathmagician.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -50,5 +50,5 @@ namespace Mathmagician.Tests
             string testString = test.NumbersToString();
             Assert.IsNotNull(testString);
         }
-}
+    } 
 }
