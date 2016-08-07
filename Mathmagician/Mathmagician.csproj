@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\Even.cs" />
+    <Compile Include="Commands\Integer.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\Odd.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
