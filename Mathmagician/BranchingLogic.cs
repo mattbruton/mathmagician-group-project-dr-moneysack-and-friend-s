@@ -26,7 +26,7 @@ namespace Mathmagician
             {
                 case "integers":
                     {
-                        Console.WriteLine("Need to implement integers");
+                        IntegersLogic();
                         toNext = "integers";
                         break;
                     }
@@ -56,7 +56,8 @@ namespace Mathmagician
                     }
                 case "exit":
                     {
-                        Environment.Exit(0);
+                        Console.WriteLine(Dialog.Bye());
+                        toNext = "nope";
                         break;
                     }
                 default:
@@ -98,7 +99,12 @@ namespace Mathmagician
 
         private static void EvenLogic() { }
 
-        private static void IntegersLogic() { }
+        private static void IntegersLogic()
+        {
+            Integer newInt = new Integer();
+            newInt.CreateNumbers(GetQuantityOfNumbers());
+            Console.WriteLine(newInt.NumbersToString());
+        }
 
         private static void PrimesLogic() { }
 

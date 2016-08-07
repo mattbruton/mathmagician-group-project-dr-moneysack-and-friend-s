@@ -1,18 +1,13 @@
 using System;
 using System.Collections.Generic;
-<<<<<<< HEAD
-=======
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mathmagician.Commands;
->>>>>>> master
 
 namespace Mathmagician
 {
     class Program
     {
-<<<<<<< HEAD
         static void Main(string[] args)
         {
             Console.WriteLine(Dialog.InitialGreeting());
@@ -23,15 +18,17 @@ namespace Mathmagician
 
         private static void CommandMenu()
         {
-            while (commandChoices.Contains(BranchingLogic.UsersSelectionFromCommandList()))
+            if (BranchingLogic.UsersSelectionFromCommandList() == "nope")
             {
-                BranchingLogic.UsersSelectionFromCommandList();
+                return;
             }
-=======
-        
-        static void Main(string[] args)
-        {
->>>>>>> master
+            else
+            {
+                while (commandChoices.Contains(BranchingLogic.UsersSelectionFromCommandList()))
+                {
+                    BranchingLogic.UsersSelectionFromCommandList();
+                }
+            }
         }
     }
 }

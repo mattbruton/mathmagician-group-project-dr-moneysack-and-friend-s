@@ -25,9 +25,17 @@
         {
             return "Whoops! I didn't understand that command.\n";
         }
+
         public static string AskForQuantity()
         {
             return "\nHow many numbers would you like me to create?";
         }
+
+        public static string Bye()
+        {
+            return "Goodbye!";
+        }
+
+
     }
 }
