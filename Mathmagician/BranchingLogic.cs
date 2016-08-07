@@ -57,7 +57,7 @@ namespace Mathmagician
                 case "exit":
                     {
                         Console.WriteLine(Dialog.Bye());
-                        toNext = "nope";
+                        toNext = "exit";
                         break;
                     }
                 default:

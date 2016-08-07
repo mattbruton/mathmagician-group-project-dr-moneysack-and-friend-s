@@ -14,12 +14,12 @@ namespace Mathmagician
         {
             do
             {
-                if (BranchingLogic.UsersSelectionFromCommandList() == "nope")
+                if (BranchingLogic.UsersSelectionFromCommandList() == "exit")
                 {
                     return;
                 }
             }
-            while (BranchingLogic.UsersSelectionFromCommandList() != "nope");
+            while (BranchingLogic.UsersSelectionFromCommandList() != "exit");
         }
     }
 }
