@@ -75,10 +75,12 @@ namespace Mathmagician
         { 
             int userNumAfterParse;
             bool canInputBeParsed = int.TryParse(PromptForQuantity(), out userNumAfterParse);
-            if (!canInputBeParsed)
+
+            if (!canInputBeParsed || userNumAfterParse > 10000)
             {
                 return 0;
             }
+
             return userNumAfterParse;
         }
 
