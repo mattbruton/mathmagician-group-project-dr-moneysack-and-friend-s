@@ -14,21 +14,18 @@ namespace Mathmagician
             CommandMenu();
         }
 
-        static List<string> commandChoices = new List<string>() { "odd", "even", "integers", "primes", "fibonacci", "whoops" };
+        static List<string> commandChoices = new List<string>() { "nope" };
 
         private static void CommandMenu()
         {
-            if (BranchingLogic.UsersSelectionFromCommandList() == "nope")
+            do
             {
-                return;
-            }
-            else
-            {
-                while (commandChoices.Contains(BranchingLogic.UsersSelectionFromCommandList()))
+                if (BranchingLogic.UsersSelectionFromCommandList() == "nope")
                 {
-                    BranchingLogic.UsersSelectionFromCommandList();
+                    return;
                 }
             }
+            while (!commandChoices.Contains(BranchingLogic.UsersSelectionFromCommandList()));
         }
     }
 }
