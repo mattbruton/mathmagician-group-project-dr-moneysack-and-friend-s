@@ -17,9 +17,9 @@ namespace Mathmagician
             Console.Write(Dialog.Prompt());
         }
 
-        public static bool UsersSelectionFromCommandList()
+        public static bool RunCommandsUntilFalse()
         {
-            bool toNext = false;
+            bool repeat = true;
             DisplayCommandMenu();
             switch (ReturnUserSelectionAsString().ToLower())
             {
@@ -51,7 +51,7 @@ namespace Mathmagician
                 case "exit":
                     {
                         Console.WriteLine(Dialog.Bye());
-                        toNext = true;
+                        repeat = false;
                         break;
                     }
                 default:
@@ -60,7 +60,7 @@ namespace Mathmagician
                         break;
                     }
             }
-            return toNext;
+            return repeat;
         }
 
         private static string PromptForQuantity()

@@ -7,19 +7,19 @@ namespace Mathmagician
         static void Main(string[] args)
         {
             Console.WriteLine(Dialog.InitialGreeting());
-            CommandMenu();
+            ExitApplicationWhenReturned();
         }
 
-        private static void CommandMenu()
+        private static void ExitApplicationWhenReturned()
         {
             do
             {
-                if (BranchingLogic.UsersSelectionFromCommandList())
+                if (!BranchingLogic.RunCommandsUntilFalse())
                 {
                     return;
                 }
             }
-            while (!BranchingLogic.UsersSelectionFromCommandList());
+            while (BranchingLogic.RunCommandsUntilFalse());
         }
     }
 }
