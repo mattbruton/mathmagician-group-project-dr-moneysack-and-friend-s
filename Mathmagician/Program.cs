@@ -14,8 +14,6 @@ namespace Mathmagician
             CommandMenu();
         }
 
-        static List<string> commandChoices = new List<string>() { "nope" };
-
         private static void CommandMenu()
         {
             do
@@ -25,7 +23,7 @@ namespace Mathmagician
                     return;
                 }
             }
-            while (!commandChoices.Contains(BranchingLogic.UsersSelectionFromCommandList()));
+            while (BranchingLogic.UsersSelectionFromCommandList() != "nope");
         }
     }
 }
