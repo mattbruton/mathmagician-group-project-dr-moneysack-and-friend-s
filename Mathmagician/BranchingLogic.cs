@@ -17,52 +17,46 @@ namespace Mathmagician
             Console.Write(Dialog.Prompt());
         }
 
-        public static string UsersSelectionFromCommandList()
+        public static bool UsersSelectionFromCommandList()
         {
-            string toNext = "";
+            bool toNext = false;
             DisplayCommandMenu();
             switch (ReturnUserSelectionAsString().ToLower())
             {
                 case "integers":
                     {
                         IntegersLogic();
-                        toNext = "integers";
                         break;
                     }
                 case "fibonacci":
                     {
                         Console.WriteLine("Need to implement fibonacci");
-                        toNext = "fibonacci";
                         break;
                     }
                 case "primes":
                     {
                         Console.WriteLine("Need to implement primes");
-                        toNext = "primes";
                         break;
                     }
                 case "odd":
                     {
                         OddLogic();
-                        toNext = "odd";
                         break;
                     }
                 case "even":
                     {
                         Console.WriteLine("Need to implement even numbers");
-                        toNext = "even";
                         break;
                     }
                 case "exit":
                     {
                         Console.WriteLine(Dialog.Bye());
-                        toNext = "exit";
+                        toNext = true;
                         break;
                     }
                 default:
                     {
                         Console.WriteLine(Dialog.InvalidCommand());
-                        toNext = "whoops";
                         break;
                     }
             }
