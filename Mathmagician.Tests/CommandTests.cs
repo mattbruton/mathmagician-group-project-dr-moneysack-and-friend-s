@@ -11,7 +11,7 @@ namespace Mathmagician.Tests
         public class TestClass : Command { }
 
         [TestMethod]
-        public void AssertNumbersToStringReturnsString()
+        public void CommandAssertNumbersToStringReturnsString()
         {
             TestClass test = new TestClass();
             int[] testNumbers = { 1, 2, 3, 4, 5 };
@@ -21,7 +21,7 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
-        public void AssertNumbersToStringReturnsCorrectMessageWithEmptyList()
+        public void CommandAssertNumbersToStringReturnsCorrectMessageWithEmptyList()
         {
             
             TestClass test = new TestClass();
@@ -32,7 +32,7 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
-        public void AssertNumbersToStringIsPrintingAllNumbersInList()
+        public void CommandAssertNumbersToStringIsPrintingAllNumbersInList()
         {
             
             TestClass test = new TestClass();
@@ -43,7 +43,7 @@ namespace Mathmagician.Tests
         }
 
         [TestMethod]
-        public void TestThatClassesCanInheritFromCommand()
+        public void CommandTestThatClassesCanInheritFromCommand()
         { 
             TestClass test = new TestClass();
             // NumbersToString is inherited from Command

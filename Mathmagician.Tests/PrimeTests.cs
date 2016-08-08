@@ -1,4 +1,5 @@
 ﻿using System;
+using Mathmagician.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Mathmagician.Tests
@@ -7,8 +8,11 @@ namespace Mathmagician.Tests
     public class PrimeTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void PrimeTestPrimeCanBeInstantiated()
         {
+            Prime test = new Prime();
+
+            Assert.IsNotNull(test);
         }
     }
 }
