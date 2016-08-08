@@ -3,7 +3,7 @@ using Mathmagician.Commands;
 
 namespace Mathmagician
 {
-    class UserInterface
+    public static class UserInterface
     {
         public static string UserSelection { get; set; }
 
