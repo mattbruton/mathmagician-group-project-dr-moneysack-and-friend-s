@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Mathmagician.Commands;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,7 +28,7 @@ namespace Mathmagician.Tests
             int[] testNumbers = {};
             test.Numbers.AddRange(testNumbers);
 
-            Assert.AreEqual("Give me a quantity that I can work with! At least let me show you a single number.", test.NumbersToString());
+            Assert.AreEqual("\nSomething went wrong. Please enter a number between 1 - 10000", test.NumbersToString());
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace Mathmagician.Tests
             int[] testNumbers = { 1, 2, 3, 4, 5 };
             test.Numbers.AddRange(testNumbers);
 
-            Assert.AreEqual("Here are your numbers: \n1, 2, 3, 4, 5", test.NumbersToString());
+            Assert.AreEqual("\nHere are your numbers: \n1, 2, 3, 4, 5", test.NumbersToString());
         }
 
         [TestMethod]
@@ -50,5 +50,5 @@ namespace Mathmagician.Tests
             string testString = test.NumbersToString();
             Assert.IsNotNull(testString);
         }
-}
+    } 
 }
