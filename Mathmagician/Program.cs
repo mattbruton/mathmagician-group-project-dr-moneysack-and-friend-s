@@ -4,18 +4,20 @@ namespace Mathmagician
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
-            UserInterface.DisplayInitialGreeting();
+            UserInterface UI = new UserInterface();
+            UI.DisplayInitialGreeting();
             do
             {
                 if (true)
                 {
-                    UserInterface.DisplayCommandMenu();
-                    UserInterface.UserSelection = Console.ReadLine();
+                    UI.DisplayCommandMenu();
+                    UI.UserSelection = Console.ReadLine();
                 }
             }
-            while (!UserInterface.UserWantsToMakeNumbers(UserInterface.UserSelection));
+            while (!UI.UserWantsToMakeNumbers(UI.UserSelection));
         }
     }
 }

@@ -3,24 +3,25 @@ using Mathmagician.Commands;
 
 namespace Mathmagician
 {
-    public static class UserInterface
+    public class UserInterface
     {
-        public static string UserSelection { get; set; }
+        Dialog uiDialog = new Dialog();
+        public string UserSelection { get; set; }
 
-        private static string UserInputForQuantity { get; set; }
+        private string UserInputForQuantity { get; set; }
 
-        public static void DisplayInitialGreeting()
+        public void DisplayInitialGreeting()
         {
-            Console.WriteLine(Dialog.InitialGreeting());
+            Console.WriteLine(uiDialog.InitialGreeting());
         }
 
-        public static void DisplayCommandMenu()
+        public void DisplayCommandMenu()
         {
-            Console.WriteLine(Dialog.ListOfCommands());
-            Console.Write(Dialog.Prompt());
+            Console.WriteLine(uiDialog.ListOfCommands());
+            Console.Write(uiDialog.Prompt());
         }
 
-        public static bool UserWantsToMakeNumbers(string input)
+        public bool UserWantsToMakeNumbers(string input)
         {
             bool canExit = false;
             switch (input.ToLower())
@@ -52,33 +53,33 @@ namespace Mathmagician
                     }
                 case "exit":
                     {
-                        Console.WriteLine(Dialog.Bye());
+                        Console.WriteLine(uiDialog.Bye());
                         canExit = true;
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine(Dialog.InvalidCommand());
+                        Console.WriteLine(uiDialog.InvalidCommand());
                         break;
                     }
             }
             return canExit;
         }
 
-        private static void QuantityPromptDialog()
+        private void QuantityPromptDialog()
         {
-            Console.WriteLine(Dialog.AskForQuantity());
-            Console.Write(Dialog.Prompt());
+            Console.WriteLine(uiDialog.AskForQuantity());
+            Console.Write(uiDialog.Prompt());
         }
         
-        private static string PromptForQuantity()
+        private string PromptForQuantity()
         {
             QuantityPromptDialog();
             UserInputForQuantity = Console.ReadLine();
             return UserInputForQuantity;
         }
 
-        private static int GetQuantityOfNumbers(string input)
+        private int GetQuantityOfNumbers(string input)
         { 
             int userNumAfterParse;
             bool canInputBeParsed = int.TryParse(input, out userNumAfterParse);
@@ -91,25 +92,25 @@ namespace Mathmagician
             return userNumAfterParse;
         }
 
-        private static void OddLogic()
+        private void OddLogic()
         {
             Odd newOdd = new Odd();
             newOdd.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
             Console.WriteLine(newOdd.NumbersToString());
         }
 
-        private static void EvenLogic() { }
+        private void EvenLogic() { }
 
-        private static void IntegersLogic()
+        private void IntegersLogic()
         {
             Integer newInt = new Integer();
             newInt.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
             Console.WriteLine(newInt.NumbersToString());
         }
 
-        private static void PrimesLogic() { }
+        private void PrimesLogic() { }
 
-        private static void FibonacciLogic() { }
+        private void FibonacciLogic() { }
     }
 }
 
