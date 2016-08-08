@@ -3,25 +3,27 @@ using Mathmagician.Commands;
 
 namespace Mathmagician
 {
-    class BranchingLogic
+    class UserInterface
     {
-        private static string ReturnUserSelectionAsString()
+        public static string UserSelection { get; set; }
+
+        private static string UserInputForQuantity { get; set; }
+
+        public static void DisplayInitialGreeting()
         {
-            string userChoice = Console.ReadLine();
-            return userChoice;
+            Console.WriteLine(Dialog.InitialGreeting());
         }
 
-        private static void DisplayCommandMenu()
+        public static void DisplayCommandMenu()
         {
             Console.WriteLine(Dialog.ListOfCommands());
             Console.Write(Dialog.Prompt());
         }
 
-        public static bool RunCommandsUntilFalse()
+        public static bool UserWantsToMakeNumbers(string input)
         {
-            bool repeat = true;
-            DisplayCommandMenu();
-            switch (ReturnUserSelectionAsString().ToLower())
+            bool canExit = false;
+            switch (input.ToLower())
             {
                 case "integers":
                     {
@@ -51,7 +53,7 @@ namespace Mathmagician
                 case "exit":
                     {
                         Console.WriteLine(Dialog.Bye());
-                        repeat = false;
+                        canExit = true;
                         break;
                     }
                 default:
@@ -60,22 +62,27 @@ namespace Mathmagician
                         break;
                     }
             }
-            return repeat;
+            return canExit;
         }
 
-        private static string PromptForQuantity()
+        private static void QuantityPromptDialog()
         {
             Console.WriteLine(Dialog.AskForQuantity());
             Console.Write(Dialog.Prompt());
-            string userNumAsString = Console.ReadLine();
-            return userNumAsString;
+        }
+        
+        private static string PromptForQuantity()
+        {
+            QuantityPromptDialog();
+            UserInputForQuantity = Console.ReadLine();
+            return UserInputForQuantity;
         }
 
-        private static int GetQuantityOfNumbers()
+        private static int GetQuantityOfNumbers(string input)
         { 
             int userNumAfterParse;
-            bool canInputBeParsed = int.TryParse(PromptForQuantity(), out userNumAfterParse);
-
+            bool canInputBeParsed = int.TryParse(input, out userNumAfterParse);
+        
             if (!canInputBeParsed || userNumAfterParse > 10000)
             {
                 return 0;
@@ -87,7 +94,7 @@ namespace Mathmagician
         private static void OddLogic()
         {
             Odd newOdd = new Odd();
-            newOdd.CreateNumbers(GetQuantityOfNumbers());
+            newOdd.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
             Console.WriteLine(newOdd.NumbersToString());
         }
 
@@ -96,7 +103,7 @@ namespace Mathmagician
         private static void IntegersLogic()
         {
             Integer newInt = new Integer();
-            newInt.CreateNumbers(GetQuantityOfNumbers());
+            newInt.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
             Console.WriteLine(newInt.NumbersToString());
         }
 

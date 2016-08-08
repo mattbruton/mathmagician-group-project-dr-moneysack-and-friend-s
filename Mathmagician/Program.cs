@@ -6,20 +6,16 @@ namespace Mathmagician
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Dialog.InitialGreeting());
-            ExitApplicationWhenReturned();
-        }
-
-        private static void ExitApplicationWhenReturned()
-        {
+            UserInterface.DisplayInitialGreeting();
             do
             {
-                if (!BranchingLogic.RunCommandsUntilFalse())
+                if (true)
                 {
-                    return;
+                    UserInterface.DisplayCommandMenu();
+                    UserInterface.UserSelection = Console.ReadLine();
                 }
             }
-            while (BranchingLogic.RunCommandsUntilFalse());
+            while (!UserInterface.UserWantsToMakeNumbers(UserInterface.UserSelection));
         }
     }
 }
