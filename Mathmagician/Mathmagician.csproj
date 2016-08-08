@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserInterface.cs" />
+    <Compile Include="Dialog.cs" />
     <Compile Include="Commands\Integer.cs" />
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\Odd.cs" />
