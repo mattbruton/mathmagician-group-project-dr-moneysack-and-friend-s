@@ -33,7 +33,7 @@ namespace Mathmagician
                     }
                 case "fibonacci":
                     {
-                        Console.WriteLine("Need to implement fibonacci");
+                        FibonacciLogic();
                         break;
                     }
                 case "primes":
@@ -48,7 +48,7 @@ namespace Mathmagician
                     }
                 case "even":
                     {
-                        Console.WriteLine("Need to implement even numbers");
+                        EvenLogic();
                         break;
                     }
                 case "exit":
@@ -99,7 +99,12 @@ namespace Mathmagician
             Console.WriteLine(newOdd.NumbersToString());
         }
 
-        private void EvenLogic() { }
+        private void EvenLogic()
+        {
+            Even newEven = new Even();
+            newEven.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
+            Console.WriteLine(newEven.NumbersToString());
+        }
 
         private void IntegersLogic()
         {
@@ -110,7 +115,12 @@ namespace Mathmagician
 
         private void PrimesLogic() { }
 
-        private void FibonacciLogic() { }
+        private void FibonacciLogic()
+        {
+            Fibonacci newFibo = new Fibonacci();
+            newFibo.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
+            Console.WriteLine(newFibo.NumbersToString());
+        }
     }
 }
 
