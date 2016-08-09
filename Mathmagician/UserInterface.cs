@@ -38,7 +38,7 @@ namespace Mathmagician
                     }
                 case "primes":
                     {
-                        Console.WriteLine("Need to implement primes");
+                        PrimesLogic();
                         break;
                     }
                 case "odd":
@@ -108,7 +108,12 @@ namespace Mathmagician
             Console.WriteLine(newInt.NumbersToString());
         }
 
-        private void PrimesLogic() { }
+        private void PrimesLogic()
+        {
+            Prime newPrime = new Prime();
+            newPrime.CreateNumbers(GetQuantityOfNumbers(PromptForQuantity()));
+            Console.WriteLine(newPrime.NumbersToString());
+        }
 
         private void FibonacciLogic() { }
     }

@@ -27,7 +27,17 @@ namespace Mathmagician.Tests
             test.CreateNumbers(20);
 
             Assert.IsFalse(test.Numbers.Any(n => lowNonPrimes.Contains(n)));
+        }
 
+        [TestMethod]
+        public void PrimeContainsExpectedSequenceOfNumbers()
+        {
+            // First seven known primes: 2, 3, 5, 7, 11, 13, 17
+            List<int> knownPrimes = new List<int> { 2, 3, 5, 7, 11, 13, 17 };
+            Prime test = new Prime();
+            test.CreateNumbers(7);
+            
+            Assert.IsTrue(test.Numbers.Any(n => knownPrimes.Contains(n)));
         }
     }
 }
