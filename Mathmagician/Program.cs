@@ -1,17 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Mathmagician.Commands;
 
 namespace Mathmagician
 {
     class Program
     {
-        
+       
         static void Main(string[] args)
         {
+            UserInterface UI = new UserInterface();
+            UI.DisplayInitialGreeting();
+            do
+            {
+                if (true)
+                {
+                    UI.DisplayCommandMenu();
+                    UI.UserSelection = Console.ReadLine();
+                }
+            }
+            while (!UI.UserWantsToMakeNumbers(UI.UserSelection));
         }
     }
 }
