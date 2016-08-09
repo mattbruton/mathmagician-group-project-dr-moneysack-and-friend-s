@@ -56,6 +56,7 @@
     <Compile Include="IntegerTests.cs" />
     <Compile Include="CommandTests.cs" />
     <Compile Include="OddTests.cs" />
+    <Compile Include="EvenTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

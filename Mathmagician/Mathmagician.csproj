@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Even.cs" />
     <Compile Include="UserInterface.cs" />
     <Compile Include="Dialog.cs" />
     <Compile Include="Commands\Integer.cs" />
