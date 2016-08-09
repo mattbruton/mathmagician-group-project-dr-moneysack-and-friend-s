@@ -9,7 +9,7 @@ namespace Mathmagician.Tests
     public class OddTests
     {
         [TestMethod]
-        public void CanOddBeInstantiated()
+        public void OddCanOddBeInstantiated()
         {
             Odd test = new Odd();
 

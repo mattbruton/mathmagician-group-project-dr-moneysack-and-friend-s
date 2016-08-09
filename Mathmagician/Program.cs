@@ -4,7 +4,6 @@ namespace Mathmagician
 {
     class Program
     {
-       
         static void Main(string[] args)
         {
             UserInterface UI = new UserInterface();
